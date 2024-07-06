@@ -60,6 +60,12 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ProfileActivity.cs" />
+    <Compile Include="Day5Activity.cs" />
+    <Compile Include="Day4Activity.cs" />
+    <Compile Include="Day3Activity.cs" />
+    <Compile Include="Day2Activity.cs" />
+    <Compile Include="Day1Activity.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
