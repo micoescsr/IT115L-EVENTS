@@ -2,7 +2,6 @@
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
-using Android.Telephony;
 using Android.Widget;
 using AndroidX.AppCompat.App;
 using System;
@@ -29,49 +28,46 @@ namespace App1
             btn5 = FindViewById<Button>(Resource.Id.button5);
             btn5 = FindViewById<Button>(Resource.Id.button6);
 
-            btn1.Click += Day1;
-            btn2.Click += Day2;
-            btn3.Click += Day3;
-            btn4.Click += Day4;
-            btn5.Click += Day5;
-            btn6.Click += Profile;
+            btn1.Click += OnButtonClick;
+            btn2.Click += OnButtonClick;
+            btn3.Click += OnButtonClick;
+            btn4.Click += OnButtonClick;
+            btn5.Click += OnButtonClick;
+            btn6.Click += OnButtonClick;
 
         }
 
-        public void Day1(object sender, EventArgs e)
+        private void OnButtonClick(object sender, EventArgs e)
         {
-            Intent intent = new Intent(this, typeof(Day1Activity));
-            StartActivity(intent);  
-        }
+            var button = sender as Button;
+            Intent intent = null;
 
-        public void Day2(object sender, EventArgs e)
-        {
-            Intent intent = new Intent(this, typeof(Day2Activity));
-            StartActivity(intent);
-        }
+            switch (button.Id)
+            {
+                case Resource.Id.button1:
+                    intent = new Intent(this, typeof(Day1Activity));
+                    break;
+                case Resource.Id.button2:
+                    intent = new Intent(this, typeof(Day2Activity));
+                    break;
+                case Resource.Id.button3:
+                    intent = new Intent(this, typeof(Day3Activity));
+                    break;
+                case Resource.Id.button4:
+                    intent = new Intent(this, typeof(Day4Activity));
+                    break;
+                case Resource.Id.button5:
+                    intent = new Intent(this, typeof(Day5Activity));
+                    break;
+                case Resource.Id.button6:
+                    intent = new Intent(this, typeof(ProfileActivity));
+                    break;
+            }
 
-        public void Day3(object sender, EventArgs e)
-        {
-            Intent intent = new Intent(this, typeof(Day3Activity));
-            StartActivity(intent);
-        }
-
-        public void Day4(object sender, EventArgs e)
-        {
-            Intent intent = new Intent(this, typeof(Day4Activity));
-            StartActivity(intent);
-        }
-
-        public void Day5(object sender, EventArgs e)
-        {
-            Intent intent = new Intent(this, typeof(Day5Activity));
-            StartActivity(intent);
-        }
-
-        public void Profile(object sender, EventArgs e)
-        {
-            Intent intent = new Intent(this, typeof(ProfileActivity));
-            StartActivity(intent);
+            if (intent != null)
+            {
+                StartActivity(intent);
+            }
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)

@@ -1,12 +1,14 @@
 ﻿using Android.App;
+using Android.Content;
 using Android.OS;
+using Android.Runtime;
 using Android.Widget;
 using AndroidX.AppCompat.App;
-using System.Text;
+using System;
+using System.Text.Json;
 using System.Threading.Tasks;
-using Android.Runtime;
 
-namespace oraxampp
+namespace App1
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = false)]
     public class ProfileActivity : AppCompatActivity
@@ -20,6 +22,7 @@ namespace oraxampp
         {
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+            // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.profile_layout);
 
             passwordUpdate = FindViewById<EditText>(Resource.Id.passwordInput);
@@ -31,10 +34,10 @@ namespace oraxampp
             houseET = FindViewById<EditText>(Resource.Id.houseET);
 
             submitButton = FindViewById<Button>(Resource.Id.submitBtn);
-            displayButton = FindViewById<Button>(Resource.Id.displayBtn);
+            //displayButton = FindViewById<Button>(Resource.Id.);
 
             submitButton.Click += async (sender, e) => await UpdateProfileAsync();
-            displayButton.Click += async (sender, e) => await DisplayProfileAsync();
+            //displayButton.Click += async (sender, e) => await DisplayProfileAsync();
         }
 
         private async Task UpdateProfileAsync()

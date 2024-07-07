@@ -1,11 +1,7 @@
 ﻿using Android.App;
-using Android.Content;
 using Android.OS;
 using Android.Runtime;
-using Android.Telephony;
-using Android.Widget;
 using AndroidX.AppCompat.App;
-using System;
 
 namespace App1
 {
@@ -22,7 +18,7 @@ namespace App1
 
         }
 
-        
+
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);

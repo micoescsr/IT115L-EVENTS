@@ -153,6 +153,7 @@ namespace App1
 			global::Xamarin.Essentials.Resource.Id.text2 = global::App1.Resource.Id.text2;
 			global::Xamarin.Essentials.Resource.Id.time = global::App1.Resource.Id.time;
 			global::Xamarin.Essentials.Resource.Id.title = global::App1.Resource.Id.title;
+			global::Xamarin.Essentials.Resource.Id.view_tree_lifecycle_owner = global::App1.Resource.Id.view_tree_lifecycle_owner;
 			global::Xamarin.Essentials.Resource.Integer.status_bar_notification_info_maxnum = global::App1.Resource.Integer.status_bar_notification_info_maxnum;
 			global::Xamarin.Essentials.Resource.Layout.browser_actions_context_menu_page = global::App1.Resource.Layout.browser_actions_context_menu_page;
 			global::Xamarin.Essentials.Resource.Layout.browser_actions_context_menu_row = global::App1.Resource.Layout.browser_actions_context_menu_row;
@@ -4161,25 +4162,28 @@ namespace App1
 			public const int view_offset_helper = 2131230979;
 			
 			// aapt resource value: 0x7F080104
-			public const int view_tree_saved_state_registry_owner = 2131230980;
+			public const int view_tree_lifecycle_owner = 2131230980;
 			
 			// aapt resource value: 0x7F080105
-			public const int visible = 2131230981;
+			public const int view_tree_saved_state_registry_owner = 2131230981;
 			
 			// aapt resource value: 0x7F080106
-			public const int visible_removing_fragment_view_tag = 2131230982;
+			public const int visible = 2131230982;
 			
 			// aapt resource value: 0x7F080107
-			public const int withText = 2131230983;
+			public const int visible_removing_fragment_view_tag = 2131230983;
 			
 			// aapt resource value: 0x7F080108
-			public const int wrap_content = 2131230984;
+			public const int withText = 2131230984;
 			
 			// aapt resource value: 0x7F080109
-			public const int yearLevelET = 2131230985;
+			public const int wrap_content = 2131230985;
 			
 			// aapt resource value: 0x7F08010A
-			public const int yearLevelTV = 2131230986;
+			public const int yearLevelET = 2131230986;
+			
+			// aapt resource value: 0x7F08010B
+			public const int yearLevelTV = 2131230987;
 			
 			static Id()
 			{
