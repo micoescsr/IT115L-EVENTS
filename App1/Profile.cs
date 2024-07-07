@@ -7,6 +7,8 @@ using AndroidX.AppCompat.App;
 using System;
 using System.Text.Json;
 using System.Threading.Tasks;
+using System.Net.Http;
+using System.Text;
 
 namespace App1
 {
@@ -16,6 +18,7 @@ namespace App1
         EditText passwordUpdate, programUpdate;
         Button submitButton, displayButton;
         EditText studNumET, fNameET, lNameET, yearLevelET, houseET;
+
         string ipAdd = "192.168.1.9"; // Replace with your server IP address
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -51,7 +54,7 @@ namespace App1
             var house = houseET.Text;
 
             var client = new HttpClient();
-            var url = $"http://{ipAdd}/IT123P/oraxampp/update_profile.php";
+            var url = $"http://{ipAdd}/update_profile.php";
 
             var profileData = new
             {
@@ -77,7 +80,7 @@ namespace App1
             var studId = studNumET.Text;
 
             var client = new HttpClient();
-            var url = $"http://{ipAdd}/IT123P/oraxampp/display_profile.php?stud_id={studId}";
+            var url = $"http://{ipAdd}/display_profile.php?stud_id={studId}";
 
             var response = await client.GetAsync(url);
             var responseString = await response.Content.ReadAsStringAsync();
