@@ -41,7 +41,7 @@ namespace App1
         public void Day1(object sender, EventArgs e)
         {
             Intent intent = new Intent(this, typeof(Day1Activity));
-            StartActivity(intent);
+            StartActivity(intent);  
         }
 
         public void Day2(object sender, EventArgs e)
