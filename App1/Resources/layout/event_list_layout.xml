@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/linearLayout1">
+    <TextView
+        android:text="EVENTS"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="98.3dp"
+        android:id="@+id/textView1"
+        android:gravity="center"
+        android:textSize="110px"
+        android:layout_marginTop="100px"
+        android:textStyle="bold"
+        android:layout_marginBottom="50px" />
+    <TextView
+        android:text="Men's Basketball"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:gravity="left"
+        android:layout_marginLeft="80px"
+        android:layout_marginBottom="25px" />
+    <TextView
+        android:text="Escape Room"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3"
+        android:gravity="left"
+        android:layout_marginLeft="80px"
+        android:layout_marginBottom="25px" />
+    <TextView
+        android:text="100m Dash"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView4"
+        android:gravity="left"
+        android:layout_marginLeft="80px"
+        android:layout_marginBottom="25px" />
+    <TextView
+        android:text="CodeX"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView5"
+        android:gravity="left"
+        android:layout_marginLeft="80px"
+        android:layout_marginBottom="25px" />
+    <Button
+        android:text="RETURN"
+        android:layout_width="271.4dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/button4"
+        android:layout_marginLeft="245px"
+        android:layout_marginTop="1350px" />
+</LinearLayout>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/linearLayout1">
+    <TextView
+        android:text="EVENT DETAILS"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="98.3dp"
+        android:id="@+id/textView1"
+        android:gravity="center"
+        android:textSize="110px"
+        android:layout_marginTop="200px"
+        android:layout_marginBottom="100px" />
+    <TextView
+        android:text="Men's Basketball"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:gravity="center" />
+    <TextView
+        android:text="Day 1"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3"
+        android:gravity="center"
+        android:layout_marginTop="50px" />
+    <TextView
+        android:text="Date: July 25, 2024"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView4"
+        android:gravity="center"
+        android:layout_marginTop="50px" />
+    <TextView
+        android:text="Venue: MMCL Gym"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView5"
+        android:gravity="center"
+        android:layout_marginTop="50px" />
+    <TextView
+        android:text="Time: 1 - 3 PM"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView6"
+        android:gravity="center"
+        android:layout_marginTop="50px" />
+    <Button
+        android:text="ENLIST AS PARTICIPANT"
+        android:layout_width="271.4dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/button1"
+        android:layout_marginLeft="240px"
+        android:layout_marginTop="120px" />
+    <Button
+        android:text="ENLIST AS AUDIENCE"
+        android:layout_width="271.4dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/button2"
+        android:layout_marginLeft="240px"
+        android:layout_marginTop="30px" />
+    <Button
+        android:text="WITHDRAW ENLISTMENT"
+        android:layout_width="271.4dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/button3"
+        android:layout_marginLeft="240px"
+        android:layout_marginTop="30px" />
+    <Button
+        android:text="RETURN"
+        android:layout_width="271.4dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/button4"
+        android:layout_marginLeft="240px"
+        android:layout_marginTop="30px" />
+</LinearLayout>
