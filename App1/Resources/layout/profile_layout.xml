@@ -29,7 +29,7 @@
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="wrap_content"    
         android:id="@+id/studNumET"
         android:hint="2022153519"
         android:inputType="none"

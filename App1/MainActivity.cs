@@ -26,7 +26,8 @@ namespace App1
             btn3 = FindViewById<Button>(Resource.Id.button3);
             btn4 = FindViewById<Button>(Resource.Id.button4);
             btn5 = FindViewById<Button>(Resource.Id.button5);
-            btn5 = FindViewById<Button>(Resource.Id.button6);
+            btn6 = FindViewById<Button>(Resource.Id.button6);
+
 
             btn1.Click += OnButtonClick;
             btn2.Click += OnButtonClick;

@@ -9,23 +9,25 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using System.Net.Http;
 using System.Text;
+using System.Net;
+using System.IO;
 
 namespace App1
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = false)]
+    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = false)]
     public class ProfileActivity : AppCompatActivity
     {
         EditText passwordUpdate, programUpdate;
-        Button submitButton, displayButton;
+        Button submitButton;
         EditText studNumET, fNameET, lNameET, yearLevelET, houseET;
 
-        string ipAdd = "192.168.1.9"; // Replace with your server IP address
+        string ipAdd = "192.168.1.2"; // Replace with your server IP address
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
-            // Set our view from the "main" layout resource
+            // Set our view from the "profile_layout" layout resource
             SetContentView(Resource.Layout.profile_layout);
 
             passwordUpdate = FindViewById<EditText>(Resource.Id.passwordInput);
@@ -37,10 +39,11 @@ namespace App1
             houseET = FindViewById<EditText>(Resource.Id.houseET);
 
             submitButton = FindViewById<Button>(Resource.Id.submitBtn);
-            //displayButton = FindViewById<Button>(Resource.Id.);
 
             submitButton.Click += async (sender, e) => await UpdateProfileAsync();
-            //displayButton.Click += async (sender, e) => await DisplayProfileAsync();
+
+            // Automatically fetch and display profile details when the activity starts
+            DisplayProfileAsync();
         }
 
         private async Task UpdateProfileAsync()
@@ -54,7 +57,7 @@ namespace App1
             var house = houseET.Text;
 
             var client = new HttpClient();
-            var url = $"http://{ipAdd}/update_profile.php";
+            var url = $"http://{ipAdd}/IT115L/update_profile.php";
 
             var profileData = new
             {
@@ -75,30 +78,48 @@ namespace App1
             Toast.MakeText(this, responseString, ToastLength.Long).Show();
         }
 
-        private async Task DisplayProfileAsync()
+        private async void DisplayProfileAsync()
         {
-            var studId = studNumET.Text;
+            int studId = 2022151927; // Set the specific student ID here
 
-            var client = new HttpClient();
-            var url = $"http://{ipAdd}/display_profile.php?stud_id={studId}";
+            string url = $"http://{ipAdd}/IT115L/display_profile.php?stud_id={studId}";
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+            request.Method = "GET";
 
-            var response = await client.GetAsync(url);
-            var responseString = await response.Content.ReadAsStringAsync();
-
-            var profile = JsonSerializer.Deserialize<Profile>(responseString);
-
-            if (profile != null)
+            try
             {
-                passwordUpdate.Text = profile.Password;
-                fNameET.Text = profile.First_name;
-                lNameET.Text = profile.Last_name;
-                yearLevelET.Text = profile.Year_lvl;
-                programUpdate.Text = profile.Program;
-                houseET.Text = profile.House_name;
+                using (HttpWebResponse response = (HttpWebResponse)await request.GetResponseAsync())
+                using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+                {
+                    string responseString = await reader.ReadToEndAsync();
+
+                    if (response.StatusCode == HttpStatusCode.OK)
+                    {
+                        var profile = JsonSerializer.Deserialize<Profile>(responseString);
+
+                        if (profile != null)
+                        {
+                            passwordUpdate.Text = profile.Password;
+                            fNameET.Text = profile.First_name;
+                            lNameET.Text = profile.Last_name;
+                            yearLevelET.Text = profile.Year_lvl;
+                            programUpdate.Text = profile.Program;
+                            houseET.Text = profile.House_name;
+                        }
+                        else
+                        {
+                            Toast.MakeText(this, "Profile not found", ToastLength.Long).Show();
+                        }
+                    }
+                    else
+                    {
+                        Toast.MakeText(this, "Error fetching profile", ToastLength.Long).Show();
+                    }
+                }
             }
-            else
+            catch (Exception ex)
             {
-                Toast.MakeText(this, "Profile not found", ToastLength.Long).Show();
+                Toast.MakeText(this, $"Error: {ex.Message}", ToastLength.Long).Show();
             }
         }
 
