@@ -62,6 +62,7 @@ namespace App1
                     break;
                 case Resource.Id.button6:
                     intent = new Intent(this, typeof(ProfileActivity));
+                    intent.PutExtra("stud_id", "2022152824");
                     break;
             }
 
